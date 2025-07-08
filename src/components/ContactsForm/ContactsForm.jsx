@@ -1,4 +1,4 @@
-import { Component, useState } from "react";
+import { useState } from "react";
 
 export const ContactsForm = ({onSubmit}) => {
     // state = {
