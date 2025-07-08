@@ -47,7 +47,7 @@ export const App = () => {
   const prevContacts = usePrevious(contacts)
 
   useEffect(() => {
-     if (contacts !== prevContacts) {
+    if (contacts !== prevContacts) {
       localStorage.setItem('contacts', JSON.stringify(contacts))
     }
   })
@@ -75,7 +75,8 @@ export const App = () => {
       number
     };
 
-    setContacts((prevContacts) => [newContact, prevContacts])
+    setContacts((prevContacts) => [newContact, ...prevContacts])
+
 
 
 
@@ -102,14 +103,14 @@ export const App = () => {
     return contacts.filter(contact => contact.name.toLowerCase().includes(normalizedFilter));
   }
 
-    return (<div>
-      <h2>Phonebook</h2>
-      <ContactsForm
-        onSubmit={addContact} />
-      <Filter value={filter} onChange={changeFilter} />
-      <ContactsList
-        contacts={getVisibleContacts()}
-        onDeleteContact={deleteContact}
-      />
-    </div>)
+  return (<div>
+    <h2>Phonebook</h2>
+    <ContactsForm
+      onSubmit={addContact} />
+    <Filter value={filter} onChange={changeFilter} />
+    <ContactsList
+      contacts={getVisibleContacts()}
+      onDeleteContact={deleteContact}
+    />
+  </div>)
 }

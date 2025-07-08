@@ -41,7 +41,7 @@ export const ContactsForm = ({onSubmit}) => {
     }
 
 
-        return (<form onSubmit={onSubmit}>
+        return (<form onSubmit={handleSubmit}>
 
             <label>
                 Name
@@ -63,7 +63,7 @@ export const ContactsForm = ({onSubmit}) => {
                     value={number}
                     onChange={handleChangeNumber}
                     name="number"
-                    pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+                    pattern="\+?\d{1,4}[-. ()]?\(?\d{1,3}\)?[-. ()]?\d{1,4}[-. ()]?\d{1,4}[-. ()]?\d{1,9}"
                     title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                     required
                 />
